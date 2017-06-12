@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Prefix Data - jQuery plugin</title>
+    <meta name="description" content="Example of using .prefixData() plugin.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Live example</h2>
+    <pre><code class="returned-object"><!--returned object goes here--></code></pre>
+</div>
+
+<!-- target -->
+<span id="example-tag"
+      data-myprefix='{"property1": "value1", "property2": {"property21": "value21"}, "property3": "value2"}'
+      data-myprefix-property2='{"property22": "value22"}'
+      data-myprefix-property2-property23="value23"
+      data-myprefix-property3="overwite-value3"
+      data-myprefix-property4='{"property41": "value41"}'
+      data-other="We do not read it"></span>
+<!-- /target -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="../jquery.prefixData.js"></script>
+<script>
+    var myprefixData = $('#example-tag').prefixData('myprefix');
+
+    console.log(myprefixData);
+    $('.returned-object').html(JSON.stringify(myprefixData, null, 2));
+</script>
+</body>
+</html>
