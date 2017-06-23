@@ -4,7 +4,7 @@
  * Return the value at the prefixed data store for the first element in the set of matched elements. Returned value can
  * be an object based on the attribute values and attributes name structure.
  *
- * @version 0.0.1
+ * @version 0.0.2
  * @link https://github.com/cichy380/prefixData
  * @author Marcin Dobroszek <marcin.dobroszek@gmail.pl>
  * @license The MIT License (MIT)
@@ -14,6 +14,8 @@
  *        to possible: $elem = $(‘.selector’).prefixData(‘mojprefix’, {„prop1”:”val1”, „prop2”:”val2”});
  */
 ;(function($) {
+    'use strict';
+
     /**
      * All available methods.
      * @private
@@ -29,7 +31,8 @@
                 last = way.pop();
 
             way.reduce(function (o, k) {
-                return o[k] = o[k] || {};
+                o[k] = o[k] || {};
+                return o[k];
             }, object)[last] = value;
         },
 
@@ -68,11 +71,11 @@
             attrs;
 
         if ($.type(prefix) === 'undefined') {
-            $.error('Prefix param is required.')
+            $.error('Prefix param is required.');
         }
 
         if ($.type(prefix) !== 'string') {
-            $.error('Prefix param has wrong type. It has to be string format.')
+            $.error('Prefix param has wrong type. It has to be string format.');
         }
 
         // try to read data from storaged data
@@ -108,6 +111,8 @@
  * @link https://stackoverflow.com/a/5282801
  */
 ;(function($) {
+    'use strict';
+
     $.fn.getAttributes = function(prefix, removePrefix) {
         var attributes = {};
 
