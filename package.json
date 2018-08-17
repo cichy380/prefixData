@@ -1,0 +1,18 @@
+{
+  "name": "prefix-data",
+  "version": "1.0",
+  "description": "Return the value at the prefixed data store for the first element in the set of matched elements.",
+  "keywords": ["jquery", "data"],
+  "homepage": "https://github.com/cichy380/prefixData#readme",
+  "bugs": {
+    "url": "https://github.com/cichy380/prefixData/issues",
+    "email" : "marcin.dobroszek@gmail.com"
+  },
+  "license": "MIT",
+  "author": "Marcin Dobroszek <marcin.dobroszek@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cichy380/prefixData.git"
+  },
+  "main": "jquery.prefixData.js"
+}
